@@ -1,7 +1,7 @@
 import { MOCK_VESSELS } from "./data/mockDataNaves.ts";
 import { useVesselFilters } from "./hooks/usoNaveFiltros.ts";
-import { Header } from "./components/Header";
-import { FilterPanel } from "./components/FilterPanel";
+import { Header } from "./components/Header.tsx";
+import { FilterPanel } from "./components/FilterPanel.tsx";
 import { VesselList } from "./components/naveList.tsx";
 
 export function App() {
