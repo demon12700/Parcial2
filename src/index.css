@@ -55,3 +55,47 @@
     color: var(--text-muted);
     font-size: 0.95rem;
   }
+
+  .filter-panel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 1rem;
+    margin-bottom: 1.75rem;
+    background: var(--bg-panel);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+  }
+  
+  .filter-panel input,
+  .filter-panel select,
+  .filter-panel button {
+    padding: 0.6rem 0.9rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-space);
+    color: var(--text-main);
+    font-size: 0.95rem;
+  }
+  
+  .filter-panel input {
+    flex: 1 1 220px;
+  }
+  
+  .filter-panel input:focus,
+  .filter-panel select:focus,
+  .filter-panel button:focus-visible {
+    outline: 2px solid var(--accent-cyan);
+    outline-offset: 1px;
+  }
+  
+  .filter-panel button {
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+  
+  .filter-panel button:hover {
+    border-color: var(--accent-cyan);
+    background: rgba(56, 189, 248, 0.12);
+  }
