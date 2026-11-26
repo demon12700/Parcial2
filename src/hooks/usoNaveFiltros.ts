@@ -1,5 +1,5 @@
 import type { Nave, NaveCategoria, FilterState } from "../types/naves.ts";
-import {useState} from "React";
+import {useState} from "react";
 
 /* Filtrado por Nombre*/
 export function matchesSearchQuery(vessel: Nave, query: string): boolean {
