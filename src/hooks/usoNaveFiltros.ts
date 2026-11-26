@@ -1,4 +1,4 @@
-import type { Nave, NaveCategoria } from "../types/naves.ts";
+import type { Nave, NaveCategoria, FilterState } from "../types/naves.ts";
 
 /* Filtrado por Nombre*/
 export function matchesSearchQuery(vessel: Nave, query: string): boolean {
@@ -31,3 +31,28 @@ export function matchesFavorites(
   if (!onlyFavorites) return true;
   return favoriteIds.includes(vessel.id);
 }
+
+/* Filtrado principal */
+
+export function filterVessels(
+    vessels: Nave[],
+    filters: FilterState,
+    favoriteIds: number[]
+  ): Nave[] {
+    return vessels.filter(
+      (vessel: Nave): boolean =>
+        matchesSearchQuery(vessel, filters.searchQuery) &&
+        matchesCategory(vessel, filters.selectedCategory) &&
+        matchesFavorites(vessel, filters.onlyFavorites, favoriteIds)
+    );
+  }
+
+  /* toggle Favorito en lista */
+
+export function toggleIdInList(ids: number[], targetId: number): number[] {
+    const exists: boolean = ids.includes(targetId);
+    if (exists) {
+        return ids.filter((id: number): boolean => id !== targetId);
+    }
+    return [...ids, targetId];
+  }
