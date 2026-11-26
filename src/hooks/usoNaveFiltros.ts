@@ -10,3 +10,12 @@ export function matchesSearchQuery(vessel: Nave, query: string): boolean {
   );
 }
 
+/* Filtrado por Categoria */
+
+export function matchesCategory(
+    vessel: Nave,
+    selectedCategory: NaveCategoria | "All"
+  ): boolean {
+    if (selectedCategory === "All") return true;
+    return vessel.categoria === selectedCategory;
+  }
