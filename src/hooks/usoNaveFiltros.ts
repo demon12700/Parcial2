@@ -19,3 +19,15 @@ export function matchesCategory(
     if (selectedCategory === "All") return true;
     return vessel.categoria === selectedCategory;
   }
+
+
+/* Filtrado por si Favorito */
+
+export function matchesFavorites(
+  vessel: Nave,
+  onlyFavorites: boolean,
+  favoriteIds: number[]
+): boolean {
+  if (!onlyFavorites) return true;
+  return favoriteIds.includes(vessel.id);
+}
