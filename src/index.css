@@ -28,3 +28,30 @@
     margin: 0 auto;
     padding: 2rem 1.25rem;
   }
+
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.5rem;
+    background: var(--bg-panel);
+    border: 1px solid var(--border-subtle);
+    border-left: 4px solid var(--accent-cyan);
+    border-radius: 12px;
+  }
+  
+  .header h1 {
+    margin: 0;
+    font-size: 1.75rem;
+    letter-spacing: 0.04em;
+    color: var(--accent-cyan);
+  }
+  
+  .header p {
+    margin: 0.25rem 0 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
